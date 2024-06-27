@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript task 1 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+      
+   <div class="container">
+        <div class="form-group">
+            <label for="numberInput">Enter a number:</label>
+            <input type="text" id="numberInput" class="form-control">
+        </div>
+        <button class="btn" onclick="reverseNumber()">Reverse Number</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+       function reverseNumber(){
+        var num = parseInt(document.getElementById('numberInput').value);
+        var n=num;
+        var rev=0;
+        while(n>0){
+            rev=(rev*10)+(n%10);
+            n=Math.floor(n/10);
+        }
+        reversedNumber=String(rev);
+        document.getElementById('result').innerText = 'Reversed Number: ' + reversedNumber;
+       }
+    </script>
+</body>
+</html>
